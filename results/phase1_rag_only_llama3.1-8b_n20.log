@@ -1,0 +1,65 @@
+Manager=rag_only | Model=llama3.1:8b | N=20 | Out=results/phase1_rag_only_llama3.1-8b_n20.jsonl
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6672.69it/s]
+[1/20] single-session-user            OK  f1=1.00 (275.6s query, 69.7s ingest)
+    gold: 'Business Administration'
+    pred: 'Business Administration.'
+[2/20] single-session-user            OK  f1=1.00 (304.4s query, 45.1s ingest)
+    gold: '45 minutes each way'
+    pred: '45 minutes each way.'
+[3/20] single-session-user            MISS f1=0.00 (233.7s query, 35.9s ingest)
+    gold: 'Target'
+    pred: 'Last Sunday.'
+[4/20] single-session-user            OK  f1=1.00 (421.0s query, 39.3s ingest)
+    gold: 'The Glass Menagerie'
+    pred: 'The Glass Menagerie.'
+[5/20] single-session-user            OK  f1=1.00 (355.2s query, 35.2s ingest)
+    gold: 'Summer Vibes'
+    pred: 'Summer Vibes'
+[6/20] single-session-user            OK  f1=1.00 (511.3s query, 41.0s ingest)
+    gold: 'Johnson'
+    pred: 'Johnson'
+[7/20] single-session-user            MISS f1=0.12 (84.4s query, 30.7s ingest)
+    gold: 'Serenity Yoga'
+    pred: 'You can take yoga classes at home using various apps, such as Down Dog.'
+[8/20] single-session-user            OK  f1=1.00 (334.9s query, 30.4s ingest)
+    gold: 'a lighter shade of gray'
+    pred: 'A lighter shade of gray.'
+[9/20] single-session-user            MISS f1=0.00 (336.9s query, 36.8s ingest)
+    gold: 'February 14th'
+    pred: 'You volunteered at the "Love is in the Air" fundraising dinner, not a local animal shelter\'s event.'
+[10/20] single-session-user            MISS f1=0.75 (321.6s query, 36.2s ingest)
+    gold: 'the sports store downtown'
+    pred: 'A sports store downtown.'
+[11/20] single-session-user            MISS f1=0.00 (335.6s query, 33.3s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'Pharmaceutical and biotechnology sectors.'
+[12/20] single-session-user            OK  f1=1.00 (251.1s query, 32.1s ingest)
+    gold: '$800'
+    pred: '$800'
+[13/20] single-session-user            OK  f1=1.00 (232.0s query, 26.5s ingest)
+    gold: '20'
+    pred: '20'
+[14/20] single-session-user            OK  f1=0.75 (229.6s query, 33.5s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'University of Melbourne.'
+[15/20] single-session-user            OK  f1=0.67 (300.9s query, 33.0s ingest)
+    gold: '10%'
+    pred: '10% off'
+[16/20] single-session-user            OK  f1=1.00 (290.3s query, 33.0s ingest)
+    gold: '4 hours'
+    pred: '4 hours.'
+[17/20] single-session-user            OK  f1=0.50 (292.2s query, 38.7s ingest)
+    gold: 'a yellow dress'
+    pred: 'A yellow dress and a pair of earrings to match.'
+[18/20] single-session-user            MISS f1=0.00 (357.0s query, 22.6s ingest)
+    gold: '500 Mbps'
+    pred: '1 Gbps.'
+[19/20] single-session-user            OK  f1=1.00 (260.9s query, 35.2s ingest)
+    gold: '7'
+    pred: '7'
+[20/20] single-session-user            OK  f1=0.75 (76.0s query, 46.6s ingest)
+    gold: 'A staunch atheist'
+    pred: 'You were a staunch atheist.'
+
+=== 14/20 EM (70.0%), mean F1=0.677 ===
+  single-session-user           : 14/20 (70.0%)

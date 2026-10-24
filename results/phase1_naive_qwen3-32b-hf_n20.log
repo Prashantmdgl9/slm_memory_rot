@@ -1,0 +1,197 @@
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 1 LongMemEval — Remote Reference ===
+Model : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+N     : 20
+Out   : results/phase1_naive_qwen3-32b-hf_n20.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6541.32it/s]
+[1/20] single-session-user            OK  f1=1.00 (35.3s query, 111.4s ingest)
+    gold: 'Business Administration'
+    pred: 'Business Administration'
+[2/20] single-session-user            MISS f1=0.00 (18.9s query, 101.2s ingest)
+    gold: '45 minutes each way'
+    pred: 'The length of your daily commute to work is not provided in your memory.'
+[3/20] single-session-user            MISS f1=0.00 (31.3s query, 118.4s ingest)
+    gold: 'Target'
+    pred: 'No relevant memory available.'
+[4/20] single-session-user            MISS f1=0.11 (27.4s query, 138.2s ingest)
+    gold: 'The Glass Menagerie'
+    pred: 'You do not have any relevant memory recorded regarding plays attended at the local community theater.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b1e53-2ed4ca07597d5e42466e0a46;d4c0142a-9608-43b2-b910-2d8be0c72db9)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b1e62-39488f9f1510b5bb6440c8fe;0054835c-ccca-491b-8440-59ecb1067f0b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b1e81-3db9a398143d96e35428b33f;0a7be98e-18e9-4937-9633-40405a089cec)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 45s…
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 795, in hf_raise_for_status
+    response.raise_for_status()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase1_hf.py", line 71, in <module>
+    run_longmemeval(manager, DATA, n=N, output_path=OUT)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/eval/runners.py", line 46, in run_longmemeval
+    manager.ingest(turn["role"], turn["content"], date)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/memory/managers/naive.py", line 101, in ingest
+    self._flush()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase1_hf.py", line 48, in _flush
+    result = hf_llm.generate_json(prompt, max_tokens=600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 85, in generate_json
+    raw = generate(full_prompt, temperature=temperature, max_tokens=max_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 65, in generate
+    r = client.chat_completion(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 930, in chat_completion
+    data = self._inner_post(request_parameters, stream=stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 283, in _inner_post
+    hf_raise_for_status(response)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 924, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b1eae-6d84a6680e9bdf4a2eda87a0;28471127-3f82-402c-b9f5-4dd5b295c3fd)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase1_hf.py", line 63, in <module>
+    active = hf_llm.active_model()
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 56, in active_model
+    _, m = _get_client()
+           ^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 52, in _get_client
+    raise RuntimeError(f"None of the candidate models are available: {_MODELS}")
+RuntimeError: None of the candidate models are available: ['Qwen/Qwen3-32B', 'Qwen/Qwen2.5-72B-Instruct', 'meta-llama/Llama-3.3-70B-Instruct']
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 1 LongMemEval — Remote Reference ===
+Model : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+N     : 20
+Out   : results/phase1_naive_qwen3-32b-hf_n20.jsonl
+
+Resuming: 4/20 already done, skipping indices [0, 1, 2, 3]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7242.16it/s]
+[5/20] single-session-user            MISS f1=0.00 (23.8s query, 74.4s ingest)
+    gold: 'Summer Vibes'
+    pred: 'The name of the Spotify playlist is not provided in your memory.'
+[6/20] single-session-user            MISS f1=0.00 (22.2s query, 57.3s ingest)
+    gold: 'Johnson'
+    pred: 'The information is not available in your memory.'
+[7/20] single-session-user            MISS f1=0.15 (16.8s query, 85.1s ingest)
+    gold: 'Serenity Yoga'
+    pred: "The user's memory does not specify where they take yoga classes."
+[8/20] single-session-user            MISS f1=0.00 (18.9s query, 62.7s ingest)
+    gold: 'a lighter shade of gray'
+    pred: 'The information is not available in your memory.'
+[9/20] single-session-user            OK  f1=0.00 (16.7s query, 71.2s ingest)
+    gold: 'February 14th'
+    pred: ''
+[10/20] single-session-user            MISS f1=0.17 (14.5s query, 49.0s ingest)
+    gold: 'the sports store downtown'
+    pred: 'The information is not available in your memory.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2b1c-3c646ed220dd737720d66400;0b76f401-04a7-40db-ba59-083fe0a0aac7)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[11/20] single-session-user            OK  f1=0.00 (9.9s query, 74.9s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: ''
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2b59-1f45b36624397b8c1cf221b8;d687e636-7c35-4f77-8a96-223385ac9100)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[12/20] single-session-user            MISS f1=0.00 (15.2s query, 62.6s ingest)
+    gold: '$800'
+    pred: 'There is no relevant information in your memory regarding the purchase of a designer handbag.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2bcc-484376b4055b501c385b238b;a19b9169-e214-4d99-a17b-9d235c75af0e)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[13/20] single-session-user            MISS f1=0.00 (3.5s query, 75.8s ingest)
+    gold: '20'
+    pred: 'There is no information in your memory about the number of Spotify playlists you have.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2c0e-711c3bfe2759b0a400cc0336;526631e6-8aab-46ad-abed-4e3ecd7d886c)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[14/20] single-session-user            OK  f1=0.33 (14.8s query, 61.7s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'Melbourne.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2c4f-1dfe1beb1cc50f1756a9dcbe;91c658f8-1475-4366-8729-9b96e636f4b4)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2c8e-0ce46f28296818a8206eeb15;4e9086d7-7946-4fd8-9816-72425be01a6a)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[15/20] single-session-user            MISS f1=0.00 (30.9s query, 62.9s ingest)
+    gold: '10%'
+    pred: 'There is no relevant memory recorded regarding the discount on your first purchase from the new clothing brand.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2cc5-727b0a7f1f38ddfd6fc83fdd;227f3638-8764-4bce-9c0e-f03a7d5b6e5f)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[16/20] single-session-user            MISS f1=0.00 (11.6s query, 75.0s ingest)
+    gold: '4 hours'
+    pred: 'The information about assembling an IKEA bookshelf is not present in your memory.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2cf8-760011f64dd210e44abf99f8;933d98c3-fc98-4b6d-a4a1-384d3c2d0b80)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2d37-61c7bac2530c29e145dcfec1;16505dca-bd7d-482b-9078-f82756106b10)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+[17/20] single-session-user            MISS f1=0.00 (10.3s query, 90.9s ingest)
+    gold: 'a yellow dress'
+    pred: "There is no record of what you bought for your sister's birthday gift in the provided memory."
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2d69-630a45716999fa082df17a49;0ca71ccb-1cd3-4254-941d-9f79d0fdbddd)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2d78-34f8f95108b6aec154dbd50a;6f12ef59-cb47-456a-b91b-f55b7a4f2968)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+[18/20] single-session-user            MISS f1=0.00 (15.0s query, 94.0s ingest)
+    gold: '500 Mbps'
+    pred: "There is no information in your memory about your new internet plan's speed."
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2dd6-0d9afd66419a15ee4678f7b2;a0a9617d-3873-49a5-8ec9-fe81b289d76d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2de5-0a94aba9445097d032adb515;c5008fc2-db3d-48fd-9f2c-0c838275f07c)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+[19/20] single-session-user            MISS f1=0.00 (14.9s query, 92.9s ingest)
+    gold: '7'
+    pred: 'There is no relevant memory recorded.'
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2e4d-075efded044e24d11328082f;ecf6fd22-f1c4-4fcd-91dc-464f4eed63ff)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a7b2e5c-2171d3dd18c22ed2018ccf6d;fcdfca64-fd31-4d6c-80ae-76e62376b058)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+[20/20] single-session-user            MISS f1=0.00 (2.6s query, 104.8s ingest)
+    gold: 'A staunch atheist'
+    pred: 'There is no recorded information in your memory regarding your previous stance on spirituality.'
+
+=== 4/20 EM (20.0%), mean F1=0.088 ===
+  single-session-user           : 4/20 (20.0%)

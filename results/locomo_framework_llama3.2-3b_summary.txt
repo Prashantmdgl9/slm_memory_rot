@@ -1,0 +1,10 @@
+=== LoCoMo Summary ===
+Condition : framework  model: llama3.2:3b
+Questions : 2
+EM        : 0/2  (0.0%)
+Mean F1   : 0.000
+
+Category                   n        EM      F1
+------------------------------------------------
+  1 multi-hop              1    0/1    0.000
+  2 temporal               1    0/1    0.000

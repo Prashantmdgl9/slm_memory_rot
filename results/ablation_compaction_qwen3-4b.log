@@ -1,0 +1,205 @@
+
+============================================================
+  Condition : compaction
+  Model     : qwen3:4b
+  Turns     : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+  Output    : ablation_compaction_qwen3-4b_*.jsonl
+============================================================
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2037.49it/s]
+  t000 ADD   →ADD    OK  | job_title                 | 157.3s  [1% | avg 157.3s]
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 1423, in getresponse
+    response.begin()
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=1200)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/ablation_run.py", line 173, in <module>
+    main()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/ablation_run.py", line 167, in main
+    run_condition(name, manager)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/ablation_run.py", line 75, in run_condition
+    manager.ingest_session_end()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/memory/managers/framework_compaction.py", line 25, in ingest_session_end
+    super().ingest_session_end()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/memory/managers/framework.py", line 120, in ingest_session_end
+    self._flush()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/memory/managers/framework.py", line 103, in _flush
+    result = llm.generate_json(self.model, prompt, think=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/ollama_client.py", line 38, in generate_json
+    r = requests.post(OLLAMA_URL, json=body, timeout=TIMEOUT)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=1200)
+ython3.12/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=1200)
+
+============================================================
+  Condition : compaction
+  Model     : qwen3:4b
+  Turns     : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+  Output    : ablation_compaction_qwen3-4b_*.jsonl
+============================================================
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6600.71it/s]
+  t000 ADD   →ADD    OK  | job_title                 | 28.3s  [1% | avg 28.3s]
+  t001 ADD   →ADD    OK  | city                      | 6.6s  [2% | avg 17.5s]
+  t002 ADD   →ADD    OK  | relationship_status       | 4.4s  [4% | avg 13.1s]
+  t003 ADD   →ADD    OK  | pet                       | 6.9s  [5% | avg 11.6s]
+  t004 ADD   →ADD    OK  | hobby_guitar              | 8.1s  [6% | avg 10.9s]
+  t005 ADD   →ADD    OK  | education                 | 5.7s  [8% | avg 10.0s]
+  t006 ADD   →ADD    OK  | salary                    | 7.5s  [9% | avg 9.7s]
+  t007 ADD   →ADD    OK  | sibling                   | 6.5s  [10% | avg 9.3s]
+  t008 ADD   →UPDATE MISS | home                      | 5.6s  [11% | avg 8.9s]
+  t009 ADD   →ADD    OK  | diet                      | 4.6s  [12% | avg 8.4s]
+  t010 NOOP  →UPDATE MISS | noop                      | 4.7s  [14% | avg 6.1s]
+  t011 ADD   →ADD    OK  | commute                   | 6.3s  [15% | avg 6.0s]
+  t012 ADD   →ADD    OK  | gym                       | 4.9s  [16% | avg 6.1s]
+  t013 ADD   →ADD    OK  | car                       | 4.3s  [18% | avg 5.8s]
+  t014 NOOP  →UPDATE MISS | noop                      | 6.2s  [19% | avg 5.6s]
+  t015 ADD   →ADD    OK  | parents_city              | 4.5s  [20% | avg 5.5s]
+  t016 ADD   →ADD    OK  | language                  | 8.2s  [21% | avg 5.6s]
+  t017 NOOP  →UPDATE MISS | noop                      | 12.7s  [22% | avg 6.2s]
+  t018 UPDATE→UPDATE OK  | job_title                 | 11.6s  [24% | avg 6.8s]
+  t019 UPDATE→UPDATE OK  | salary                    | 7.9s  [25% | avg 7.1s]
+  t020 UPDATE→ADD    MISS | relationship_status       | 6.6s  [26% | avg 7.3s]
+  t021 DELETE→DELETE OK  | hobby_guitar              | 7.1s  [28% | avg 7.4s]
+  t022 NOOP  →UPDATE MISS | noop                      | 9.7s  [29% | avg 7.9s]
+  t023 UPDATE→UPDATE OK  | diet                      | 6.2s  [30% | avg 8.1s]
+  t024 DELETE→UPDATE MISS | language                  | 6.3s  [31% | avg 8.1s]
+  t025 ADD   →ADD    OK  | hobby_photography         | 6.7s  [32% | avg 8.3s]
+  t026 NOOP  →NOOP   OK  | noop                      | 3.6s  [34% | avg 7.9s]
+  t027 UPDATE→UPDATE OK  | city                      | 6.7s  [35% | avg 7.3s]
+  t028 UPDATE→UPDATE OK  | home                      | 6.9s  [36% | avg 6.8s]
+  t029 NOOP  →UPDATE MISS | noop                      | 6.3s  [38% | avg 6.6s]
+  t030 DELETE→UPDATE MISS | commute                   | 5.6s  [39% | avg 6.5s]
+  t031 DELETE→DELETE OK  | gym                       | 5.5s  [40% | avg 6.4s]
+  t032 ADD   →ADD    OK  | hobby_running             | 5.9s  [41% | avg 6.0s]
+  t033 UPDATE→UPDATE OK  | car                       | 6.8s  [42% | avg 6.0s]
+  t034 UPDATE→UPDATE OK  | relationship_status       | 5.7s  [44% | avg 6.0s]
+  t035 ADD   →ADD    OK  | side_project              | 9.1s  [45% | avg 6.2s]
+  t036 NOOP  →ADD    MISS | noop                      | 6.2s  [46% | avg 6.5s]
+  t037 DELETE→ADD    MISS | pet                       | 7.7s  [48% | avg 6.6s]
+  t038 NOOP  →ADD    MISS | noop                      | 4.9s  [49% | avg 6.4s]
+  t039 UPDATE→UPDATE OK  | employer                  | 8.1s  [50% | avg 6.5s]
+  t040 UPDATE→UPDATE OK  | job_title                 | 5.7s  [51% | avg 6.6s]
+  t041 UPDATE→UPDATE OK  | salary                    | 6.1s  [52% | avg 6.6s]
+  t042 NOOP  →NOOP   OK  | noop                      | 1.9s  [54% | avg 6.2s]
+  t043 UPDATE→UPDATE OK  | city                      | 4.0s  [55% | avg 5.9s]
+  t044 UPDATE→UPDATE OK  | home                      | 4.0s  [56% | avg 5.8s]
+  t045 ADD   →UPDATE MISS | pet                       | 5.0s  [58% | avg 5.4s]
+  t046 NOOP  →UPDATE MISS | noop                      | 6.1s  [59% | avg 5.4s]
+  t047 UPDATE→NOOP   MISS | relationship_status       | 2.0s  [60% | avg 4.8s]
+  t048 ADD   →UPDATE MISS | language                  | 4.2s  [61% | avg 4.7s]
+  t049 NOOP  →NOOP   OK  | noop                      | 2.0s  [62% | avg 4.1s]
+  t050 DELETE→DELETE OK  | hobby_photography         | 4.3s  [64% | avg 4.0s]
+  t051 DELETE→NOOP   MISS | side_project              | 8.5s  [65% | avg 4.2s]
+  t052 ADD   →ADD    OK  | work_project              | 6.5s  [66% | avg 4.7s]
+  t053 NOOP  →UPDATE MISS | noop                      | 4.3s  [68% | avg 4.7s]
+  t054 UPDATE→UPDATE OK  | diet                      | 4.7s  [69% | avg 4.8s]
+  t055 ADD   →UPDATE MISS | gym                       | 5.7s  [70% | avg 4.8s]
+  t056 NOOP  →ADD    MISS | noop                      | 6.0s  [71% | avg 4.8s]
+  t057 UPDATE→UPDATE OK  | relationship_status       | 6.9s  [72% | avg 5.3s]
+  t058 NOOP  →UPDATE MISS | noop                      | 9.0s  [74% | avg 5.8s]
+  t059 UPDATE→DELETE MISS | salary                    | 8.1s  [75% | avg 6.4s]
+  t060 DELETE→UPDATE MISS | language                  | 6.8s  [76% | avg 6.6s]
+  t061 UPDATE→NOOP   MISS | work_project              | 3.1s  [78% | avg 6.1s]
+  t062 NOOP  →UPDATE MISS | noop                      | 5.9s  [79% | avg 6.0s]
+  t063 UPDATE→UPDATE OK  | job_title                 | 5.3s  [80% | avg 6.2s]
+  t064 UPDATE→UPDATE OK  | car                       | 5.3s  [81% | avg 6.2s]
+  t065 NOOP  →UPDATE MISS | noop                      | 4.3s  [82% | avg 6.1s]
+  t066 UPDATE→DELETE MISS | relationship_status       | 4.6s  [84% | avg 5.9s]
+  t067 NOOP  →NOOP   OK  | noop                      | 2.3s  [85% | avg 5.5s]
+  t068 UPDATE→UPDATE OK  | home                      | 4.6s  [86% | avg 5.0s]
+  t069 UPDATE→UPDATE OK  | relationship_status       | 4.7s  [88% | avg 4.7s]
+  t070 DELETE→NOOP   MISS | gym                       | 5.3s  [89% | avg 4.5s]
+  t071 NOOP  →UPDATE MISS | noop                      | 4.6s  [90% | avg 4.7s]
+  t072 ADD   →UPDATE MISS | podcast                   | 5.5s  [91% | avg 4.6s]
+  t073 NOOP  →ADD    MISS | noop                      | 5.8s  [92% | avg 4.7s]
+  t074 UPDATE→UPDATE OK  | employer                  | 6.2s  [94% | avg 4.8s]
+  t075 UPDATE→UPDATE OK  | job_title                 | 6.3s  [95% | avg 5.0s]
+  t076 UPDATE→UPDATE OK  | salary                    | 7.6s  [96% | avg 5.3s]
+  t077 NOOP  →ADD    MISS | noop                      | 5.9s  [98% | avg 5.6s]
+  t078 DELETE→ADD    MISS | hobby_running             | 4.8s  [99% | avg 5.7s]
+  t079 ADD   →UPDATE MISS | hobby_swimming            | 4.7s  [100% | avg 5.7s]
+
+  Running QA pass...
+  [1/14] OK f1=0.67  Q: What is the user's current job title?
+  [2/14] OK f1=1.00  Q: Where does the user currently live?
+  [3/14] OK f1=0.00  Q: What is the user's current salary?
+  [4/14] OK f1=0.33  Q: Does the user have any pets?
+  [5/14] MISS f1=0.00  Q: What is the user's current relationship status?
+  [6/14] OK f1=1.00  Q: What is the user's current car?
+  [7/14] OK f1=0.33  Q: What is the user's current home?
+  [8/14] MISS f1=0.00  Q: What is the user's diet?
+  [9/14] MISS f1=0.00  Q: What degree does the user have?
+  [10/14] OK f1=1.00  Q: What is the user's sibling's name?
+  [11/14] OK f1=1.00  Q: Is the user still at TechCorp?
+  [12/14] OK f1=1.00  Q: Is the user still vegetarian?
+  [13/14] OK f1=1.00  Q: Does the user still play guitar?
+  [14/14] OK f1=1.00  Q: Is the user married?
+
+  ──────────────────────────────────────────────────
+  Total: 15.0 min  |  Overall acc: 57%
+  Per-op accuracy:
+    ADD     recall=0.750  precision=0.692
+    UPDATE  recall=0.808  precision=0.512
+    DELETE  recall=0.300  precision=0.600
+    NOOP    recall=0.200  precision=0.500
+  Final store: entries=23  rot=10
+  QA: 11/14 EM  f1=0.595
+
+Done. Cross-reference with phase2_* (naive) and phase3_* (framework_full).

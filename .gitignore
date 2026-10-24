@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Large datasets — NOT redistributed (licensing + GitHub 100MB limit).
+# See data/README.md for download instructions.
+data/*.json
+
+# Internal working files (uncomment to exclude from the public repo)
+# Claude.md
+# RESEARCH_PLAN.md
+# docs/superpowers/

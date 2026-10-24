@@ -1,0 +1,12 @@
+=== LoCoMo Summary ===
+Condition : rag  model: llama3.2:3b
+Questions : 200
+EM        : 46/200  (23.0%)
+Mean F1   : 0.279
+
+Category                   n        EM      F1
+------------------------------------------------
+  1 multi-hop             52   10/52   0.315
+  2 temporal              52    4/52   0.150
+  3 open-domain           45   12/45   0.185
+  4 single-hop            51   20/51   0.456

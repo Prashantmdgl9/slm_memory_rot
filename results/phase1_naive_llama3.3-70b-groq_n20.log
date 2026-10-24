@@ -1,0 +1,90 @@
+[groq_client] Using model: llama-3.3-70b-versatile
+=== Phase 1 LongMemEval — Groq Reference ===
+Model : llama-3.3-70b-versatile  (slug: llama3.3-70b-groq)
+N     : 20
+Out   : results/phase1_naive_llama3.3-70b-groq_n20.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7239.52it/s]
+[1/20] single-session-user            OK  f1=1.00 (13.9s query, 37.3s ingest)
+    gold: 'Business Administration'
+    pred: 'Business Administration'
+[2/20] single-session-user            MISS f1=0.00 (17.5s query, 63.7s ingest)
+    gold: '45 minutes each way'
+    pred: 'Unknown.'
+[3/20] single-session-user            MISS f1=0.00 (11.3s query, 86.8s ingest)
+    gold: 'Target'
+    pred: 'Unknown, that information is not in your memory.'
+[4/20] single-session-user            MISS f1=0.00 (8.9s query, 99.5s ingest)
+    gold: 'The Glass Menagerie'
+    pred: 'There is no information about attending a play.'
+[5/20] single-session-user            OK  f1=1.00 (8.1s query, 88.7s ingest)
+    gold: 'Summer Vibes'
+    pred: 'Summer Vibes'
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98172, Requested 3028. Please try again in 17m16.8s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 15s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98155, Requested 3028. Please try again in 17m2.112s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 30s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98120, Requested 3028. Please try again in 16m31.872s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 45s…
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase1_groq.py", line 63, in <module>
+    run_longmemeval(manager, DATA, n=N, output_path=OUT)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/eval/runners.py", line 46, in run_longmemeval
+    manager.ingest(turn["role"], turn["content"], date)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/memory/managers/naive.py", line 101, in ingest
+    self._flush()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase1_groq.py", line 40, in _flush
+    result = groq_llm.generate_json(prompt, max_tokens=600)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/groq_client.py", line 76, in generate_json
+    raw = generate(prompt + "\nOutput JSON only, no extra text.",
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/groq_client.py", line 60, in generate
+    r = client.chat.completions.create(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/groq/resources/chat/completions.py", line 462, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/groq/_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98068, Requested 3028. Please try again in 15m46.944s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+[groq_client] Using model: llama-3.3-70b-versatile
+=== Phase 1 LongMemEval — Groq Reference ===
+Model : llama-3.3-70b-versatile  (slug: llama3.3-70b-groq)
+N     : 20
+Out   : results/phase1_naive_llama3.3-70b-groq_n20.jsonl
+
+Resuming: 5/20 already done, skipping indices [0, 1, 2, 3, 4]
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 98035, Requested 3028. Please try again in 15m18.432s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 923s…
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7951.02it/s]
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99991, Requested 3191. Please try again in 45m49.248s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 2754s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96802, Requested 3390. Please try again in 2m45.888s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 171s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99999, Requested 4113. Please try again in 59m12.767999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3558s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 100000, Requested 4216. Please try again in 1h0m42.624s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 15s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99982, Requested 4216. Please try again in 1h0m27.072s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 30s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99947, Requested 4216. Please try again in 59m56.832s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3602s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 100000, Requested 3604. Please try again in 51m53.856s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3119s…
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[groq_client] Using model: llama-3.3-70b-versatile
+=== Phase 1 LongMemEval — Groq Reference ===
+Model : llama-3.3-70b-versatile  (slug: llama3.3-70b-groq)
+N     : 20
+Out   : results/phase1_naive_llama3.3-70b-groq_n20.jsonl
+
+Resuming: 5/20 already done, skipping indices [0, 1, 2, 3, 4]
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 97186, Requested 3028. Please try again in 3m4.896s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 195s…
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7314.58it/s]
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99991, Requested 3176. Please try again in 45m36.287999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 2746s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 96812, Requested 3377. Please try again in 2m43.296s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 173s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 100000, Requested 4075. Please try again in 58m40.8s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3531s…
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99999, Requested 4140. Please try again in 59m36.096s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3586s…
+[6/20] single-session-user            OK  f1=1.00 (2.1s query, 42016.0s ingest)
+    gold: 'Johnson'
+    pred: 'Johnson'
+[7/20] single-session-user            MISS f1=0.20 (11.0s query, 65.9s ingest)
+    gold: 'Serenity Yoga'
+    pred: 'With Sarah, using the Down Dog yoga app.'
+  [groq_client] Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01kzrjd0mae8nvh73p9bhhtbn1` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99947, Requested 3926. Please try again in 55m46.272s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}} — retrying in 3356s…
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

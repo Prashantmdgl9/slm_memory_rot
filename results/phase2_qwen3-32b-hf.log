@@ -1,0 +1,533 @@
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6578.91it/s]
+  t000 ADD   →ADD    OK  | job_title                 | 2.8s  [1%]
+  t001 ADD   →ADD    OK  | city                      | 4.1s  [2%]
+  t002 ADD   →ADD    OK  | relationship_status       | 3.5s  [4%]
+  t003 ADD   →ADD    OK  | pet                       | 3.6s  [5%]
+  t004 ADD   →ADD    OK  | hobby_guitar              | 3.8s  [6%]
+  t005 ADD   →ADD    OK  | education                 | 3.4s  [8%]
+  t006 ADD   →ADD    OK  | salary                    | 3.9s  [9%]
+  t007 ADD   →ADD    OK  | sibling                   | 3.5s  [10%]
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 795, in hf_raise_for_status
+    response.raise_for_status()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 169, in <module>
+    main()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 90, in main
+    result = llm.generate_json(prompt, max_tokens=400)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 77, in generate_json
+    raw = generate(full_prompt, temperature=temperature, max_tokens=max_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 62, in generate
+    r = client.chat_completion(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 930, in chat_completion
+    data = self._inner_post(request_parameters, stream=stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 283, in _inner_post
+    hf_raise_for_status(response)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 924, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a799084-3883fcb24465f4c523a4383a;cde7090f-8861-441b-9f73-8d2c16ddc4cc)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7144.65it/s]
+Resuming from turn 8  (8 turns already done)
+
+  t008 ADD   →UPDATE MISS | home                      | 8.1s  [11%]
+  t009 ADD   →ADD    OK  | diet                      | 4.6s  [12%]
+  t010 NOOP  →ADD    MISS | noop                      | 7.7s  [14%]
+  t011 ADD   →ADD    OK  | commute                   | 4.8s  [15%]
+  t012 ADD   →ADD    OK  | gym                       | 6.3s  [16%]
+  t013 ADD   →ADD    OK  | car                       | 5.7s  [18%]
+  t014 NOOP  →NOOP   OK  | noop                      | 5.3s  [19%]
+  t015 ADD   →ADD    OK  | parents_city              | 11.4s  [20%]
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 795, in hf_raise_for_status
+    response.raise_for_status()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 202, in <module>
+    main()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 123, in main
+    result = llm.generate_json(prompt, max_tokens=400)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 77, in generate_json
+    raw = generate(full_prompt, temperature=temperature, max_tokens=max_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 62, in generate
+    r = client.chat_completion(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 930, in chat_completion
+    data = self._inner_post(request_parameters, stream=stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 283, in _inner_post
+    hf_raise_for_status(response)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 924, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c0a1-779c99b3051c4a7d74f8c166;331d8ba8-7985-4536-8317-ef020f2e3272)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7358.36it/s]
+Resuming from turn 16  (16 turns already done)
+
+  t016 ADD   →ADD    OK  | language                  | 5.4s  [21%]
+  t017 NOOP  →ADD    MISS | noop                      | 6.7s  [22%]
+  t018 UPDATE→UPDATE OK  | job_title                 | 14.4s  [24%]
+  t019 UPDATE→UPDATE OK  | salary                    | 5.7s  [25%]
+  t020 UPDATE→UPDATE OK  | relationship_status       | 10.3s  [26%]
+  t021 DELETE→DELETE OK  | hobby_guitar              | 14.4s  [28%]
+  t022 NOOP  →ADD    MISS | noop                      | 6.2s  [29%]
+  t023 UPDATE→DELETE MISS | diet                      | 11.4s  [30%]
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 795, in hf_raise_for_status
+    response.raise_for_status()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/httpx/_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 202, in <module>
+    main()
+  File "/Users/prashantmudgal/Documents/Experiments/memory/experiments/phase2_hf.py", line 123, in main
+    result = llm.generate_json(prompt, max_tokens=400)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 77, in generate_json
+    raw = generate(full_prompt, temperature=temperature, max_tokens=max_tokens)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/src/models/hf_client.py", line 62, in generate
+    r = client.chat_completion(
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 930, in chat_completion
+    data = self._inner_post(request_parameters, stream=stream)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/inference/_client.py", line 283, in _inner_post
+    hf_raise_for_status(response)
+  File "/Users/prashantmudgal/Documents/Experiments/memory/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 924, in hf_raise_for_status
+    raise _format(HfHubHTTPError, str(e), response) from e
+huggingface_hub.errors.HfHubHTTPError: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c2f7-54df1f615a051dee062c0b88;6ee49c9f-5532-4624-8a42-690e39b4fa69)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 6889.87it/s]
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 11928.24it/s]
+Resuming from turn 24  (24 turns already done)
+
+  t024 DELETE→NOOP   MISS | language                  | 8.9s  [31%]
+  t025 ADD   →NOOP   MISS | hobby_photography         | 9.2s  [32%]
+  t026 NOOP  →ADD    MISS | noop                      | 5.1s  [34%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c5e3-533c10b1585be09d4c8f74cd;64b4d632-339a-485a-8ec0-e20e211ec12e)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+Resuming from turn 24  (24 turns already done)
+
+  t024 DELETE→DELETE OK  | language                  | 7.7s  [31%]
+  t025 ADD   →NOOP   MISS | hobby_photography         | 9.6s  [32%]
+  t026 NOOP  →ADD    MISS | noop                      | 4.9s  [34%]
+  t027 UPDATE→NOOP   MISS | city                      | 8.4s  [35%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c5e9-07aaaabb79dfb2af25ebee43;5ad1a17f-c081-4ae5-a57e-cd0577e4b795)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c5f3-6d447a4c7715fd44590aa126;33a372ba-1feb-47a7-aef5-579cc8291f86)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c5f9-05a493215138d7d47ff352ac;f8fe8700-ad73-40b0-884c-631b5afb2151)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c611-62bd81c667260e8b1d6492ef;80be9147-6a72-4064-987a-962b47e09381)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 45s…
+  t028 UPDATE→ADD    MISS | home                      | 51.3s  [36%]
+  t029 NOOP  →NOOP   OK  | noop                      | 8.7s  [38%]
+  t030 DELETE→DELETE OK  | commute                   | 5.8s  [39%]
+  t031 DELETE→DELETE OK  | gym                       | 3.9s  [40%]
+  t032 ADD   →ADD    OK  | hobby_running             | 4.3s  [41%]
+  t033 UPDATE→DELETE MISS | car                       | 4.2s  [42%]
+  t034 UPDATE→NOOP   MISS | relationship_status       | 8.6s  [44%]
+  t035 ADD   →ADD    OK  | side_project              | 5.6s  [45%]
+  t036 NOOP  →ADD    MISS | noop                      | 6.0s  [46%]
+  t037 DELETE→UPDATE MISS | pet                       | 6.9s  [48%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c654-2641d8f7399fc182691936ea;fc6146fb-a695-4eec-9b90-57f8a23040a3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t027 UPDATE→NOOP   MISS | city                      | 99.9s  [35%]
+  t028 UPDATE→UPDATE OK  | home                      | 6.4s  [36%]
+  t029 NOOP  →ADD    MISS | noop                      | 5.8s  [38%]
+  t030 DELETE→NOOP   MISS | commute                   | 8.8s  [39%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c65d-368d3e1619a86fef76740139;fe29648c-3531-4635-bce7-dfb615703134)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c664-0fe7fcdc479a609d15686f27;f597ec55-b3cf-411f-b79c-f25b9af3c5a3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c66c-70130fca1ff1ac5a55aad355;4c1ab2e3-f2f0-43fe-bba0-876465b401a9)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t038 NOOP  →NOOP   OK  | noop                      | 53.0s  [49%]
+  t039 UPDATE→DELETE MISS | employer                  | 6.2s  [50%]
+  t040 UPDATE→UPDATE OK  | job_title                 | 5.8s  [51%]
+  t041 UPDATE→UPDATE OK  | salary                    | 14.1s  [52%]
+  t042 NOOP  →ADD    MISS | noop                      | 10.3s  [54%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6af-1eda4b423290db832b5ba763;fb29dca6-c3dd-4fb3-a4ab-0b42708eedf2)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t031 DELETE→NOOP   MISS | gym                       | 55.0s  [40%]
+  t032 ADD   →DELETE MISS | hobby_running             | 5.2s  [41%]
+  t033 UPDATE→DELETE MISS | car                       | 14.0s  [42%]
+  t034 UPDATE→DELETE MISS | relationship_status       | 10.2s  [44%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6b2-1bf383a07d55565c2a8832aa;53b08306-eb10-4715-ad9f-af78b5d13e87)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t043 UPDATE→DELETE MISS | city                      | 22.2s  [55%]
+  t044 UPDATE→UPDATE OK  | home                      | 9.5s  [56%]
+  t045 ADD   →ADD    OK  | pet                       | 5.4s  [58%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6d4-44caafe648896eae63ea259b;f6bbe43b-190c-43c1-9790-ae577f6b6003)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t035 ADD   →ADD    OK  | side_project              | 23.9s  [45%]
+  t036 NOOP  →ADD    MISS | noop                      | 5.4s  [46%]
+  t037 DELETE→UPDATE MISS | pet                       | 11.8s  [48%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6dc-6a6aa8d6602dc20a4bcec8e0;4c9cb171-5c77-412b-a5f7-5586e0ff7ea3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6e3-0581d8d924a411cf07236af8;c3413ab2-a65d-4cdd-b3c3-2ee7460787cb)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c6eb-205f95f502a5f1ae23014326;c44320ce-c437-474f-bf83-5620060fdc9d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t038 NOOP  →NOOP   OK  | noop                      | 55.5s  [49%]
+  t039 UPDATE→NOOP   MISS | employer                  | 10.5s  [50%]
+  t040 UPDATE→NOOP   MISS | job_title                 | 12.6s  [51%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c72a-63fbdfab0718b85406e9e86f;4ca4d6ff-84b6-47a5-9493-466cc0fbb1a8)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t041 UPDATE→ADD    MISS | salary                    | 26.6s  [52%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c745-3f641ae7760de8b73b53bc38;0f1343d8-3b38-4036-bc30-19883551bf3c)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t046 NOOP  →ADD    MISS | noop                      | 54.3s  [59%]
+  t047 UPDATE→ADD    MISS | relationship_status       | 12.6s  [60%]
+  t048 ADD   →ADD    OK  | language                  | 5.2s  [61%]
+  t049 NOOP  →ADD    MISS | noop                      | 6.7s  [62%]
+  t050 DELETE→ADD    MISS | hobby_photography         | 5.9s  [64%]
+  t051 DELETE→DELETE OK  | side_project              | 6.2s  [65%]
+  t052 ADD   →ADD    OK  | work_project              | 8.0s  [66%]
+  t053 NOOP  →ADD    MISS | noop                      | 4.8s  [68%]
+  t054 UPDATE→NOOP   MISS | diet                      | 14.5s  [69%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c74b-1c87567d441f921956f9b02a;755a3ebc-4949-45c6-91f7-a87c0798756f)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c754-034847ba3da64d545804f82a;e1425f3e-fc4c-47d0-bdee-870b26061bb5)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c75a-67e9b854419690771c78eee1;665e8700-9d2c-4319-8375-9c43ea2193f3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t042 NOOP  →ADD    MISS | noop                      | 57.4s  [54%]
+  t043 UPDATE→NOOP   MISS | city                      | 16.6s  [55%]
+  t044 UPDATE→ADD    MISS | home                      | 6.9s  [56%]
+  t045 ADD   →ADD    OK  | pet                       | 6.2s  [58%]
+  t046 NOOP  →ADD    MISS | noop                      | 4.8s  [59%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7a1-52057f40376171690c228618;2288c22c-7924-49a7-93a0-b2fdb9275cd3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t055 ADD   →NOOP   MISS | gym                       | 62.9s  [70%]
+  t056 NOOP  →ADD    MISS | noop                      | 7.6s  [71%]
+  t057 UPDATE→NOOP   MISS | relationship_status       | 9.4s  [72%]
+  t058 NOOP  →NOOP   OK  | noop                      | 9.1s  [74%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7a4-7605afb566cec3d80005d33a;05eb509b-e298-4997-b7c3-357145b0cc1c)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t047 UPDATE→ADD    MISS | relationship_status       | 22.6s  [60%]
+  t048 ADD   →ADD    OK  | language                  | 7.6s  [61%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7c0-5a20deb84e8d16d25540891b;0e5b8ae2-cc80-419f-90de-1ec86ac2fc41)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t059 UPDATE→NOOP   MISS | salary                    | 23.6s  [75%]
+  t060 DELETE→NOOP   MISS | language                  | 16.0s  [76%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7cc-71d950053ec875e4253a944c;50d208a2-7adc-4351-a680-0888c9a1b609)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7cf-7e5cc4771e86deeb78b87e3f;40f25b52-cb82-406b-96e6-d2633def8744)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c7db-0adb1d95502957d940bbe162;b1c64b31-da00-4b03-8bf2-ec2f39ad71df)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t049 NOOP  →ADD    MISS | noop                      | 50.5s  [62%]
+  t050 DELETE→ADD    MISS | hobby_photography         | 10.2s  [64%]
+  t051 DELETE→DELETE OK  | side_project              | 10.4s  [65%]
+  t052 ADD   →ADD    OK  | work_project              | 6.4s  [66%]
+  t053 NOOP  →ADD    MISS | noop                      | 5.7s  [68%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c814-77e0e1e236dbe8236a914e38;9a0a68dd-c1e5-4f55-9b15-80c65f663664)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t061 UPDATE→ADD    MISS | work_project              | 52.7s  [78%]
+  t062 NOOP  →ADD    MISS | noop                      | 11.4s  [79%]
+  t063 UPDATE→UPDATE OK  | job_title                 | 14.0s  [80%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c81a-4439051c2c149f8941f35609;7ad44888-a45b-47e0-960a-704166394aa3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t054 UPDATE→NOOP   MISS | diet                      | 29.3s  [69%]
+  t055 ADD   →UPDATE MISS | gym                       | 15.9s  [70%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c841-6d2833035418fe9301c6e22b;543571da-bce8-47f1-b9c5-5f682a12a72d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t064 UPDATE→UPDATE OK  | car                       | 21.3s  [81%]
+  t065 NOOP  →NOOP   OK  | noop                      | 14.4s  [82%]
+  t066 UPDATE→ADD    MISS | relationship_status       | 6.0s  [84%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c844-7ddfcf2035523c0f3b912cf3;915997ac-4a37-459d-8f42-25d0c96fa649)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c850-5ae8b57311b1fed76a484842;8d584fd2-9369-4daf-b5c5-93862cd2288d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c854-1ffeaf8a59cd19c80dc14692;0148ae44-73ca-4bb8-a1e3-dc297b31173b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t067 NOOP  →ADD    MISS | noop                      | 57.0s  [85%]
+  t068 UPDATE→ADD    MISS | home                      | 5.1s  [86%]
+  t069 UPDATE→ADD    MISS | relationship_status       | 10.7s  [88%]
+  t070 DELETE→UPDATE MISS | gym                       | 8.5s  [89%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c896-12bae2db4ed28cd4026bb241;9d7ebda1-acf7-45f0-94fa-21cdc927d00a)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t071 NOOP  →ADD    MISS | noop                      | 23.6s  [90%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c8ae-7eaff3f963733f6136c78ef8;69b65131-ffa9-407a-affa-42b0ffa6ba2a)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t056 NOOP  →ADD    MISS | noop                      | 50.5s  [71%]
+  t057 UPDATE→ADD    MISS | relationship_status       | 10.0s  [72%]
+  t058 NOOP  →ADD    MISS | noop                      | 13.0s  [74%]
+  t059 UPDATE→NOOP   MISS | salary                    | 19.4s  [75%]
+  t060 DELETE→ADD    MISS | language                  | 6.3s  [76%]
+  t061 UPDATE→ADD    MISS | work_project              | 7.4s  [78%]
+  t062 NOOP  →ADD    MISS | noop                      | 10.6s  [79%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c8b7-434807d05d696578388ac513;bab23dc3-5c69-42cd-a88e-928c4ec6d377)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c8bd-770cd30f57750d7e5ed39f94;c53f6997-7ae3-41ec-80e4-c80b1c6a37da)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c8c6-7b9fc896308481e154a56585;bb4cd447-11cb-481c-92e2-36d89220f128)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t072 ADD   →ADD    OK  | podcast                   | 51.4s  [91%]
+  t073 NOOP  →ADD    MISS | noop                      | 9.6s  [92%]
+  t074 UPDATE→ADD    MISS | employer                  | 16.2s  [94%]
+  t075 UPDATE→ADD    MISS | job_title                 | 9.9s  [95%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c906-77211620478eb73a7cd7aba2;911c6a47-6d78-4862-98a3-c42b78d444f6)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t076 UPDATE→ADD    MISS | salary                    | 29.2s  [96%]
+  t077 NOOP  →ADD    MISS | noop                      | 12.4s  [98%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c930-18ec3984291e82866e76323a;30576670-f4ff-4da9-9823-27041018001b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t063 UPDATE→ADD    MISS | job_title                 | 54.3s  [80%]
+  t064 UPDATE→NOOP   MISS | car                       | 14.3s  [81%]
+  t065 NOOP  →ADD    MISS | noop                      | 5.9s  [82%]
+  t066 UPDATE→NOOP   MISS | relationship_status       | 13.1s  [84%]
+  t067 NOOP  →ADD    MISS | noop                      | 13.7s  [85%]
+  t068 UPDATE→UPDATE OK  | home                      | 13.1s  [86%]
+  t069 UPDATE→ADD    MISS | relationship_status       | 11.3s  [88%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c936-0e95a91422118fde47bcf2ab;e96f5770-5694-4528-94c4-eb33a4440255)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c93f-1ee6cf4a74bf02b47694635e;251bf54e-156c-41b5-b910-f35da94db760)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c945-4d17b89f5309a4e52a6e64b4;b1765574-348e-4b69-8125-24c7ec39d4d3)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  t070 DELETE→ADD    MISS | gym                       | 53.9s  [89%]
+  t071 NOOP  →ADD    MISS | noop                      | 9.4s  [90%]
+  t072 ADD   →ADD    OK  | podcast                   | 5.9s  [91%]
+  t073 NOOP  →ADD    MISS | noop                      | 13.6s  [92%]
+  t074 UPDATE→ADD    MISS | employer                  | 6.7s  [94%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c990-032dd9d9685206610773f22f;23d99208-2805-488f-9848-0a4ce1d4bcab)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t078 DELETE→ADD    MISS | hobby_running             | 54.7s  [99%]
+  t079 ADD   →ADD    OK  | hobby_swimming            | 11.9s  [100%]
+
+Running QA pass...
+  [1/14] OK f1=0.00  Q: What is the user's current job title?
+  [2/14] OK f1=0.00  Q: Where does the user currently live?
+  [3/14] OK f1=0.00  Q: What is the user's current salary?
+  [4/14] OK f1=0.00  Q: Does the user have any pets?
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c993-60993351066fe1e06210e9dc;56fc24bd-3302-4216-bd7f-426e7147d8f5)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c9a0-25f7b7f86e1af7941c75dfda;950f7df0-ce06-462a-bd0c-0df9a14569fc)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c9a3-093768067675656f3f9cadb6;bf2a7744-8ff7-431a-b1c9-cbe0d42565be)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 30s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c9be-28d6a3b85336f92c5a1e3fa2;318a948d-2952-4fb6-9bb7-85856a1c7074)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 45s…
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79c9c1-2e9278ad17cc32e53f372e20;87abf6e7-0a7d-4f36-b2e6-5be433e6a5f7)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 45s…
+  [5/14] OK f1=0.00  Q: What is the user's current relationship status?
+  [6/14] OK f1=1.00  Q: What is the user's current car?
+  [7/14] OK f1=0.59  Q: What is the user's current home?
+  [8/14] MISS f1=0.00  Q: What is the user's diet?
+  [9/14] MISS f1=0.43  Q: What degree does the user have?
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79ca17-17201d731efc2d933268d702;e2b670d2-ffda-4475-93cf-aef1adcee733)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  t075 UPDATE→UPDATE OK  | job_title                 | 106.0s  [95%]
+  t076 UPDATE→ADD    MISS | salary                    | 13.8s  [96%]
+  t077 NOOP  →ADD    MISS | noop                      | 15.0s  [98%]
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79ca18-04e9e505773b1c6912d5c646;350905ab-2509-45fb-b2bd-a5b1bf8a7d1d)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[hf_client] Using model: Qwen/Qwen3-32B
+=== Phase 2 Injection Diagnostic — Remote Reference ===
+Model   : Qwen/Qwen3-32B  (slug: qwen3-32b-hf)
+Turns   : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+Outputs : results/phase2_qwen3-32b-hf_ops.jsonl, results/phase2_qwen3-32b-hf_health.jsonl, results/phase2_qwen3-32b-hf_qa.jsonl
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights:  33%|███▎      | 66/199 [00:00<00:00, 513.04it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 1034.44it/s]
+Resuming from turn 80  (80 turns already done)
+
+
+Running QA pass...
+  [1/14] OK f1=0.00  Q: What is the user's current job title?
+  [2/14] OK f1=0.00  Q: Where does the user currently live?
+  [3/14] OK f1=0.00  Q: What is the user's current salary?
+  [4/14] MISS f1=0.24  Q: Does the user have any pets?
+  [5/14] OK f1=0.00  Q: What is the user's current relationship status?
+  [6/14] OK f1=0.00  Q: What is the user's current car?
+  [7/14] OK f1=0.00  Q: What is the user's current home?
+  [8/14] MISS f1=0.00  Q: What is the user's diet?
+  [9/14] OK f1=0.00  Q: What degree does the user have?
+  [10/14] OK f1=1.00  Q: What is the user's sibling's name?
+  [11/14] OK f1=0.00  Q: Is the user still at TechCorp?
+  [hf_client] Error: Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6a79caa4-694a53df54f2e9f061d9b0a6;93bbf354-53a2-46c0-b510-a20983d13a7b)
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402
+
+You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage. — retrying in 15s…
+  [12/14] MISS f1=0.00  Q: Is the user still vegetarian?
+  [13/14] OK f1=1.00  Q: Does the user still play guitar?
+  [14/14] OK f1=1.00  Q: Is the user married?
+
+============================================================
+Model: Qwen/Qwen3-32B  |  Total: 2.1 min
+
+Per-op accuracy:
+  ADD     precision=0.447  recall=0.875
+  UPDATE  precision=0.727  recall=0.308
+  DELETE  precision=0.556  recall=0.500
+  NOOP    precision=0.385  recall=0.250
+  Overall: 0.487
+Final store:  entries=48  stale=10  rot=29
+QA:  11/14 EM  mean_f1=0.231
+============================================================

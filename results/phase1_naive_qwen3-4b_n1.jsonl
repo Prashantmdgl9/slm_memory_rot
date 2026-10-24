@@ -1,0 +1,1 @@
+{"idx": 0, "question_type": "single-session-user", "question": "What degree did I graduate with?", "gold": "Business Administration", "pred": "Business Administration", "hit": true, "f1": 1.0, "ingest_time_s": 216.0, "query_time_s": 77.5}

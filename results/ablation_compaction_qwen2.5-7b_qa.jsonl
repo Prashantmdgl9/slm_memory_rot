@@ -1,0 +1,14 @@
+{"qi": 0, "question": "What is the user's current job title?", "gold": "Chief AI Officer at BigBank Corp", "pred": "Chief AI Officer", "hit": true, "f1": 0.6666666666666666, "query_time_s": 7.07}
+{"qi": 1, "question": "Where does the user currently live?", "gold": "Austin", "pred": "Austin", "hit": true, "f1": 1.0, "query_time_s": 4.27}
+{"qi": 2, "question": "What is the user's current salary?", "gold": "$250,000/year", "pred": "$250,000", "hit": true, "f1": 0.0, "query_time_s": 6.11}
+{"qi": 3, "question": "Does the user have any pets?", "gold": "yes, a dog named Max", "pred": "Yes.", "hit": true, "f1": 0.33333333333333337, "query_time_s": 4.19}
+{"qi": 4, "question": "What is the user's current relationship status?", "gold": "dating Priya", "pred": "No information provided about the user's current relationship status.", "hit": false, "f1": 0.0, "query_time_s": 4.01}
+{"qi": 5, "question": "What is the user's current car?", "gold": "BMW X5", "pred": "Honda Civic", "hit": false, "f1": 0.0, "query_time_s": 2.9}
+{"qi": 6, "question": "What is the user's current home?", "gold": "house in South Lamar, Austin", "pred": "bigger house in South Lamar", "hit": false, "f1": 0.8000000000000002, "query_time_s": 4.25}
+{"qi": 7, "question": "What is the user's diet?", "gold": "omnivore", "pred": "fully vegan", "hit": false, "f1": 0.0, "query_time_s": 3.39}
+{"qi": 8, "question": "What degree does the user have?", "gold": "CS degree from UCLA", "pred": "studied computer science at UCLA", "hit": false, "f1": 0.22222222222222224, "query_time_s": 4.65}
+{"qi": 9, "question": "What is the user's sibling's name?", "gold": "Emma", "pred": "Emma", "hit": true, "f1": 1.0, "query_time_s": 3.99}
+{"qi": 10, "question": "Is the user still at TechCorp?", "gold": "no", "pred": "No.", "hit": true, "f1": 1.0, "query_time_s": 3.29}
+{"qi": 11, "question": "Is the user still vegetarian?", "gold": "no", "pred": "Yes.", "hit": false, "f1": 0.0, "query_time_s": 3.25}
+{"qi": 12, "question": "Does the user still play guitar?", "gold": "no", "pred": "No.", "hit": true, "f1": 1.0, "query_time_s": 2.79}
+{"qi": 13, "question": "Is the user married?", "gold": "no", "pred": "Not mentioned.", "hit": true, "f1": 0.0, "query_time_s": 2.78}

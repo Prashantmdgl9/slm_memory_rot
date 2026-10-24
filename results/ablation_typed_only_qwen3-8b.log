@@ -1,0 +1,116 @@
+
+============================================================
+  Condition : typed_only
+  Model     : qwen3:8b
+  Turns     : 80  ({'ADD': 24, 'UPDATE': 26, 'DELETE': 10, 'NOOP': 20})
+  Output    : ablation_typed_only_qwen3-8b_*.jsonl
+============================================================
+  t000 ADD   →NOOP   MISS | job_title                 | 17.3s  [1% | avg 17.3s]
+  t001 ADD   →NOOP   MISS | city                      | 75.3s  [2% | avg 46.3s]
+  t002 ADD   →NOOP   MISS | relationship_status       | 78.3s  [4% | avg 57.0s]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 7906.51it/s]
+  t003 ADD   →ADD    OK  | pet                       | 122.6s  [5% | avg 73.4s]
+  t004 ADD   →NOOP   MISS | hobby_guitar              | 77.7s  [6% | avg 74.2s]
+  t005 ADD   →NOOP   MISS | education                 | 82.8s  [8% | avg 75.7s]
+  t006 ADD   →NOOP   MISS | salary                    | 82.8s  [9% | avg 76.7s]
+  t007 ADD   →ADD    OK  | sibling                   | 89.8s  [10% | avg 78.3s]
+  t008 ADD   →ADD    OK  | home                      | 90.2s  [11% | avg 79.6s]
+  t009 ADD   →NOOP   MISS | diet                      | 99.6s  [12% | avg 81.6s]
+  t010 NOOP  →NOOP   OK  | noop                      | 81.6s  [14% | avg 88.1s]
+  t011 ADD   →ADD    OK  | commute                   | 88.0s  [15% | avg 89.3s]
+  t012 ADD   →ADD    OK  | gym                       | 86.5s  [16% | avg 90.2s]
+  t013 ADD   →NOOP   MISS | car                       | 82.1s  [18% | avg 86.1s]
+  t014 NOOP  →NOOP   OK  | noop                      | 81.5s  [19% | avg 86.5s]
+  t015 ADD   →ADD    OK  | parents_city              | 94.3s  [20% | avg 87.6s]
+  t016 ADD   →NOOP   MISS | language                  | 69.5s  [21% | avg 86.3s]
+  t017 NOOP  →NOOP   OK  | noop                      | 77.4s  [22% | avg 85.1s]
+  t018 UPDATE→NOOP   MISS | job_title                 | 75.2s  [24% | avg 83.6s]
+  t019 UPDATE→NOOP   MISS | salary                    | 103.5s  [25% | avg 84.0s]
+  t020 UPDATE→NOOP   MISS | relationship_status       | 77.0s  [26% | avg 83.5s]
+  t021 DELETE→ADD    MISS | hobby_guitar              | 82.6s  [28% | avg 83.0s]
+  t022 NOOP  →NOOP   OK  | noop                      | 82.5s  [29% | avg 82.6s]
+  t023 UPDATE→NOOP   MISS | diet                      | 72.4s  [30% | avg 81.6s]
+  t024 DELETE→NOOP   MISS | language                  | 91.0s  [31% | avg 82.5s]
+  t025 ADD   →ADD    OK  | hobby_photography         | 104.0s  [32% | avg 83.5s]
+  t026 NOOP  →NOOP   OK  | noop                      | 52.2s  [34% | avg 81.8s]
+  t027 UPDATE→NOOP   MISS | city                      | 67.2s  [35% | avg 80.8s]
+  t028 UPDATE→NOOP   MISS | home                      | 72.5s  [36% | avg 80.5s]
+  t029 NOOP  →NOOP   OK  | noop                      | 56.2s  [38% | avg 75.8s]
+  t030 DELETE→UPDATE MISS | commute                   | 79.1s  [39% | avg 76.0s]
+  t031 DELETE→UPDATE MISS | gym                       | 73.1s  [40% | avg 75.0s]
+  t032 ADD   →NOOP   MISS | hobby_running             | 53.4s  [41% | avg 72.1s]
+  t033 UPDATE→ADD    MISS | car                       | 86.6s  [42% | avg 73.5s]
+  t034 UPDATE→NOOP   MISS | relationship_status       | 56.3s  [44% | avg 70.0s]
+  t035 ADD   →NOOP   MISS | side_project              | 66.0s  [45% | avg 66.2s]
+  t036 NOOP  →NOOP   OK  | noop                      | 90.4s  [46% | avg 70.1s]
+  t037 DELETE→ADD    MISS | pet                       | 85.5s  [48% | avg 71.9s]
+  t038 NOOP  →NOOP   OK  | noop                      | 100.6s  [49% | avg 74.7s]
+  t039 UPDATE→NOOP   MISS | employer                  | 113.9s  [50% | avg 80.5s]
+  t040 UPDATE→ADD    MISS | job_title                 | 157.7s  [51% | avg 88.3s]
+  t041 UPDATE→NOOP   MISS | salary                    | 69.1s  [52% | avg 88.0s]
+  t042 NOOP  →NOOP   OK  | noop                      | 60.8s  [54% | avg 88.7s]
+  t043 UPDATE→ADD    MISS | city                      | 73.2s  [55% | avg 87.4s]
+  t044 UPDATE→UPDATE OK  | home                      | 99.2s  [56% | avg 91.6s]
+  t045 ADD   →NOOP   MISS | pet                       | 70.6s  [58% | avg 92.1s]
+  t046 NOOP  →NOOP   OK  | noop                      | 45.3s  [59% | avg 87.6s]
+  t047 UPDATE→NOOP   MISS | relationship_status       | 42.0s  [60% | avg 83.2s]
+  t048 ADD   →NOOP   MISS | language                  | 39.7s  [61% | avg 77.1s]
+  t049 NOOP  →NOOP   OK  | noop                      | 38.9s  [62% | avg 69.6s]
+  t050 DELETE→UPDATE MISS | hobby_photography         | 42.5s  [64% | avg 58.1s]
+  t051 DELETE→ADD    MISS | side_project              | 44.2s  [65% | avg 55.6s]
+  t052 ADD   →ADD    OK  | work_project              | 49.7s  [66% | avg 54.5s]
+  t053 NOOP  →UPDATE MISS | noop                      | 47.7s  [68% | avg 52.0s]
+  t054 UPDATE→UPDATE OK  | diet                      | 39.0s  [69% | avg 46.0s]
+  t055 ADD   →UPDATE MISS | gym                       | 39.0s  [70% | avg 42.8s]
+  t056 NOOP  →NOOP   OK  | noop                      | 39.8s  [71% | avg 42.2s]
+  t057 UPDATE→NOOP   MISS | relationship_status       | 36.4s  [72% | avg 41.7s]
+  t058 NOOP  →NOOP   OK  | noop                      | 35.6s  [74% | avg 41.3s]
+  t059 UPDATE→ADD    MISS | salary                    | 45.4s  [75% | avg 41.9s]
+  t060 DELETE→NOOP   MISS | language                  | 30.5s  [76% | avg 40.7s]
+  t061 UPDATE→NOOP   MISS | work_project              | 31.1s  [78% | avg 39.4s]
+  t062 NOOP  →UPDATE MISS | noop                      | 34.6s  [79% | avg 37.9s]
+  t063 UPDATE→UPDATE OK  | job_title                 | 221.5s  [80% | avg 55.3s]
+  t064 UPDATE→UPDATE OK  | car                       | 37.5s  [81% | avg 55.1s]
+  t065 NOOP  →UPDATE MISS | noop                      | 36.1s  [82% | avg 54.8s]
+  t066 UPDATE→NOOP   MISS | relationship_status       | 35.8s  [84% | avg 54.4s]
+  t067 NOOP  →NOOP   OK  | noop                      | 58.1s  [85% | avg 56.6s]
+  t068 UPDATE→UPDATE OK  | home                      | 54.0s  [86% | avg 58.4s]
+  t069 UPDATE→ADD    MISS | relationship_status       | 16.7s  [88% | avg 55.6s]
+  t070 DELETE→NOOP   MISS | gym                       | 5.5s  [89% | avg 53.1s]
+  t071 NOOP  →UPDATE MISS | noop                      | 9.8s  [90% | avg 51.0s]
+  t072 ADD   →ADD    OK  | podcast                   | 10.2s  [91% | avg 48.5s]
+  t073 NOOP  →NOOP   OK  | noop                      | 6.7s  [92% | avg 27.0s]
+  t074 UPDATE→NOOP   MISS | employer                  | 5.2s  [94% | avg 23.8s]
+  t075 UPDATE→UPDATE OK  | job_title                 | 9.6s  [95% | avg 21.2s]
+  t076 UPDATE→UPDATE OK  | salary                    | 118.7s  [96% | avg 29.5s]
+  t077 NOOP  →NOOP   OK  | noop                      | 47.8s  [98% | avg 28.4s]
+  t078 DELETE→NOOP   MISS | hobby_running             | 82.9s  [99% | avg 31.3s]
+  t079 ADD   →NOOP   MISS | hobby_swimming            | 49.0s  [100% | avg 34.5s]
+
+  Running QA pass...
+  [1/14] OK f1=0.67  Q: What is the user's current job title?
+  [2/14] OK f1=0.02  Q: Where does the user currently live?
+  [3/14] OK f1=0.00  Q: What is the user's current salary?
+  [4/14] MISS f1=0.32  Q: Does the user have any pets?
+  [5/14] MISS f1=0.00  Q: What is the user's current relationship status?
+  [6/14] OK f1=1.00  Q: What is the user's current car?
+  [7/14] MISS f1=0.50  Q: What is the user's current home?
+  [8/14] MISS f1=0.00  Q: What is the user's diet?
+  [9/14] MISS f1=0.17  Q: What degree does the user have?
+  [10/14] OK f1=1.00  Q: What is the user's sibling's name?
+  [11/14] OK f1=1.00  Q: Is the user still at TechCorp?
+  [12/14] OK f1=0.00  Q: Is the user still vegetarian?
+  [13/14] OK f1=1.00  Q: Does the user still play guitar?
+  [14/14] OK f1=1.00  Q: Is the user married?
+
+  ──────────────────────────────────────────────────
+  Total: 107.2 min  |  Overall acc: 40%
+  Per-op accuracy:
+    ADD     recall=0.375  precision=0.529
+    UPDATE  recall=0.269  precision=0.467
+    DELETE  recall=0.000  precision=0.000
+    NOOP    recall=0.800  precision=0.333
+  Final store: entries=20  rot=9
+  QA: 9/14 EM  f1=0.476
+
+Done. Cross-reference with phase2_* (naive) and phase3_* (framework_full).

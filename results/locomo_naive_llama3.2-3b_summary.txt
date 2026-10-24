@@ -1,0 +1,12 @@
+=== LoCoMo Summary ===
+Condition : naive  model: llama3.2:3b
+Questions : 40
+EM        : 6/40  (15.0%)
+Mean F1   : 0.191
+
+Category                   n        EM      F1
+------------------------------------------------
+  1 multi-hop             12    3/12   0.289
+  2 temporal              12    0/12   0.010
+  3 open-domain            5    1/5    0.242
+  4 single-hop            11    2/11   0.259

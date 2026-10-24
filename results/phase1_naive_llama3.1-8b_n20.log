@@ -1,0 +1,57 @@
+Manager=naive | Model=llama3.1:8b | N=20 | Out=results/phase1_naive_llama3.1-8b_n20.jsonl
+Resuming: 3/20 already done, skipping indices [0, 1, 2]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19219.55it/s]
+[4/20] single-session-user            MISS f1=0.00 (136.7s query, 664.9s ingest)
+    gold: 'The Glass Menagerie'
+    pred: "You didn't mention attending a play."
+[5/20] single-session-user            MISS f1=0.00 (186.9s query, 586.9s ingest)
+    gold: 'Summer Vibes'
+    pred: "You didn't mention creating a playlist on Spotify."
+[6/20] single-session-user            OK  f1=1.00 (168.7s query, 379.2s ingest)
+    gold: 'Johnson'
+    pred: 'Johnson.'
+[7/20] single-session-user            MISS f1=0.00 (167.4s query, 559.8s ingest)
+    gold: 'Serenity Yoga'
+    pred: 'Local studio.'
+[8/20] single-session-user            MISS f1=0.00 (150.5s query, 499.5s ingest)
+    gold: 'a lighter shade of gray'
+    pred: "You didn't mention repainting your bedroom walls."
+[9/20] single-session-user            MISS f1=0.00 (143.5s query, 549.2s ingest)
+    gold: 'February 14th'
+    pred: "You didn't mention volunteering at a specific fundraising dinner, but you mentioned enjoying 'Love is in the Air' fundra"
+[10/20] single-session-user            MISS f1=0.18 (230.0s query, 373.4s ingest)
+    gold: 'the sports store downtown'
+    pred: 'No record of buying the tennis racket.'
+[11/20] single-session-user            MISS f1=0.00 (156.1s query, 444.8s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'Counseling/psychiatric work.'
+[12/20] single-session-user            MISS f1=0.00 (175.0s query, 330.8s ingest)
+    gold: '$800'
+    pred: 'No record of spending on a designer handbag.'
+[13/20] single-session-user            MISS f1=0.00 (76.0s query, 509.6s ingest)
+    gold: '20'
+    pred: "Unfortunately, I don't have access to your personal data or accounts. However, based on your memory of experience in the"
+[14/20] single-session-user            MISS f1=0.50 (168.1s query, 416.6s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'University of Saskatchewan.'
+[15/20] single-session-user            MISS f1=0.00 (157.9s query, 261.6s ingest)
+    gold: '10%'
+    pred: "You didn't mention getting a discount on your first purchase."
+[16/20] single-session-user            OK  f1=1.00 (168.5s query, 484.1s ingest)
+    gold: '4 hours'
+    pred: '4 hours.'
+[17/20] single-session-user            OK  f1=0.75 (121.0s query, 346.9s ingest)
+    gold: 'a yellow dress'
+    pred: 'A yellow dress and earrings.'
+[18/20] single-session-user            MISS f1=0.00 (111.9s query, 406.2s ingest)
+    gold: '500 Mbps'
+    pred: '1 Gbps.'
+[19/20] single-session-user            MISS f1=0.00 (149.3s query, 257.6s ingest)
+    gold: '7'
+    pred: "You didn't mention packing for a trip to Costa Rica."
+[20/20] single-session-user            MISS f1=0.00 (53.4s query, 375.0s ingest)
+    gold: 'A staunch atheist'
+    pred: 'There is no mention of your previous stance on spirituality.'
+
+=== 4/20 EM (20.0%), mean F1=0.222 ===
+  single-session-user           : 4/20 (20.0%)

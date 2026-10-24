@@ -1,0 +1,17 @@
+{"turn_id": 0, "n_entries": 1, "stale_count": 0, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 0}
+{"turn_id": 5, "n_entries": 2, "stale_count": 0, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 0}
+{"turn_id": 10, "n_entries": 7, "stale_count": 0, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 0}
+{"turn_id": 15, "n_entries": 9, "stale_count": 0, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 0}
+{"turn_id": 20, "n_entries": 7, "stale_count": 0, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 0}
+{"turn_id": 25, "n_entries": 9, "stale_count": 1, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 1}
+{"turn_id": 30, "n_entries": 8, "stale_count": 0, "duplicate_count": 1, "contradiction_pairs": 1, "rot_score": 1}
+{"turn_id": 35, "n_entries": 10, "stale_count": 1, "duplicate_count": 0, "contradiction_pairs": 0, "rot_score": 1}
+{"turn_id": 40, "n_entries": 10, "stale_count": 1, "duplicate_count": 2, "contradiction_pairs": 2, "rot_score": 3}
+{"turn_id": 45, "n_entries": 13, "stale_count": 1, "duplicate_count": 3, "contradiction_pairs": 3, "rot_score": 4}
+{"turn_id": 50, "n_entries": 13, "stale_count": 2, "duplicate_count": 3, "contradiction_pairs": 3, "rot_score": 5}
+{"turn_id": 55, "n_entries": 10, "stale_count": 0, "duplicate_count": 4, "contradiction_pairs": 4, "rot_score": 4}
+{"turn_id": 60, "n_entries": 16, "stale_count": 3, "duplicate_count": 7, "contradiction_pairs": 7, "rot_score": 10}
+{"turn_id": 65, "n_entries": 11, "stale_count": 1, "duplicate_count": 7, "contradiction_pairs": 7, "rot_score": 8}
+{"turn_id": 70, "n_entries": 11, "stale_count": 2, "duplicate_count": 3, "contradiction_pairs": 3, "rot_score": 5}
+{"turn_id": 75, "n_entries": 4, "stale_count": 0, "duplicate_count": 3, "contradiction_pairs": 3, "rot_score": 3}
+{"turn_id": 79, "n_entries": 4, "stale_count": 0, "duplicate_count": 2, "contradiction_pairs": 2, "rot_score": 2}

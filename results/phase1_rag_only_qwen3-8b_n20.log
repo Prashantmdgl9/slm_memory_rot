@@ -1,0 +1,57 @@
+Manager=rag_only | Model=qwen3:8b | N=20 | Out=results/phase1_rag_only_qwen3-8b_n20.jsonl
+Resuming: 3/20 already done, skipping indices [0, 1, 2]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 17195.44it/s]
+[4/20] single-session-user            OK  f1=0.43 (70.4s query, 86.6s ingest)
+    gold: 'The Glass Menagerie'
+    pred: 'The play you attended at the local community theater was **The Glass Menagerie**.'
+[5/20] single-session-user            OK  f1=1.00 (91.9s query, 63.7s ingest)
+    gold: 'Summer Vibes'
+    pred: 'Summer Vibes'
+[6/20] single-session-user            OK  f1=1.00 (215.1s query, 58.0s ingest)
+    gold: 'Johnson'
+    pred: 'Johnson'
+[7/20] single-session-user            OK  f1=0.25 (94.3s query, 57.8s ingest)
+    gold: 'Serenity Yoga'
+    pred: 'You take yoga classes at home using the Down Dog app and at Serenity Yoga studio.'
+[8/20] single-session-user            OK  f1=0.89 (176.0s query, 60.0s ingest)
+    gold: 'a lighter shade of gray'
+    pred: 'Lighter shade of gray.'
+[9/20] single-session-user            MISS f1=0.00 (99.9s query, 64.6s ingest)
+    gold: 'February 14th'
+    pred: "The conversation history does not specify the exact date you volunteered at a local animal shelter's fundraising dinner."
+[10/20] single-session-user            MISS f1=0.40 (68.3s query, 59.1s ingest)
+    gold: 'the sports store downtown'
+    pred: 'You bought your new tennis racket from a sports store downtown.'
+[11/20] single-session-user            MISS f1=0.00 (94.7s query, 60.5s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'Previous occupation: Pharmaceutical and biotechnology sectors.'
+[12/20] single-session-user            OK  f1=1.00 (62.4s query, 57.9s ingest)
+    gold: '$800'
+    pred: '$800'
+[13/20] single-session-user            OK  f1=0.29 (105.7s query, 59.2s ingest)
+    gold: '20'
+    pred: 'You have 20 playlists on Spotify.'
+[14/20] single-session-user            OK  f1=0.75 (84.8s query, 54.2s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'University of Melbourne'
+[15/20] single-session-user            OK  f1=0.40 (159.4s query, 56.0s ingest)
+    gold: '10%'
+    pred: 'The discount was 10%.'
+[16/20] single-session-user            OK  f1=1.00 (108.3s query, 57.6s ingest)
+    gold: '4 hours'
+    pred: '4 hours'
+[17/20] single-session-user            OK  f1=0.33 (96.6s query, 63.6s ingest)
+    gold: 'a yellow dress'
+    pred: "The user bought a yellow dress and a pair of matching earrings for their sister's birthday."
+[18/20] single-session-user            MISS f1=0.00 (95.6s query, 52.9s ingest)
+    gold: '500 Mbps'
+    pred: '1 Gbps'
+[19/20] single-session-user            OK  f1=0.17 (193.6s query, 56.4s ingest)
+    gold: '7'
+    pred: 'The user packed 7 shirts for their trip to Costa Rica.'
+[20/20] single-session-user            OK  f1=0.46 (37.8s query, 9.7s ingest)
+    gold: 'A staunch atheist'
+    pred: 'Your previous stance on spirituality was being a staunch atheist.'
+
+=== 15/20 EM (75.0%), mean F1=0.497 ===
+  single-session-user           : 15/20 (75.0%)

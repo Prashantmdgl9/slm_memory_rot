@@ -1,0 +1,8 @@
+# Core (strictly on-device pipeline)
+numpy
+requests
+sentence-transformers        # retrieval embedder: BAAI/bge-small-en-v1.5
+
+# Optional — only for the remote 32B judge / cross-checks (not used in primary on-device results)
+huggingface_hub
+groq

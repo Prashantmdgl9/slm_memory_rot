@@ -1,0 +1,14 @@
+{"qi": 0, "question": "What is the user's current job title?", "gold": "Chief AI Officer at BigBank Corp", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 11.11}
+{"qi": 1, "question": "Where does the user currently live?", "gold": "Austin", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 4.93}
+{"qi": 2, "question": "What is the user's current salary?", "gold": "$250,000/year", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 11.06}
+{"qi": 3, "question": "Does the user have any pets?", "gold": "yes, a dog named Max", "pred": "The user has two pets: a cat named Luna and a golden retrie", "hit": false, "f1": 0.23529411764705882, "query_time_s": 5.89}
+{"qi": 4, "question": "What is the user's current relationship status?", "gold": "dating Priya", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 7.97}
+{"qi": 5, "question": "What is the user's current car?", "gold": "BMW X5", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 12.11}
+{"qi": 6, "question": "What is the user's current home?", "gold": "house in South Lamar, Austin", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 4.85}
+{"qi": 7, "question": "What is the user's diet?", "gold": "omnivore", "pred": "The user follows a fully vegan diet.", "hit": false, "f1": 0.0, "query_time_s": 14.87}
+{"qi": 8, "question": "What degree does the user have?", "gold": "CS degree from UCLA", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 4.84}
+{"qi": 9, "question": "What is the user's sibling's name?", "gold": "Emma", "pred": "Emma", "hit": true, "f1": 1.0, "query_time_s": 3.61}
+{"qi": 10, "question": "Is the user still at TechCorp?", "gold": "no", "pred": "", "hit": true, "f1": 0.0, "query_time_s": 10.06}
+{"qi": 11, "question": "Is the user still vegetarian?", "gold": "no", "pred": "Yes.", "hit": false, "f1": 0.0, "query_time_s": 24.61}
+{"qi": 12, "question": "Does the user still play guitar?", "gold": "no", "pred": "No.", "hit": true, "f1": 1.0, "query_time_s": 5.51}
+{"qi": 13, "question": "Is the user married?", "gold": "no", "pred": "No.", "hit": true, "f1": 1.0, "query_time_s": 3.12}

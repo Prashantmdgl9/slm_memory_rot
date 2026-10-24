@@ -1,0 +1,53 @@
+Manager=full_context | Model=qwen3:8b | N=20 | Out=results/phase1_full_context_qwen3-8b_n20.jsonl
+Resuming: 4/20 already done, skipping indices [0, 1, 2, 3]
+[5/20] single-session-user            MISS f1=0.00 (145.9s query, 0.0s ingest)
+    gold: 'Summer Vibes'
+    pred: 'The information about the playlist name is not available in the provided conversation history.'
+[6/20] single-session-user            MISS f1=0.00 (159.1s query, 0.0s ingest)
+    gold: 'Johnson'
+    pred: 'There is no information provided about your last name or any name change in the conversation history.'
+[7/20] single-session-user            OK  f1=0.04 (244.2s query, 0.0s ingest)
+    gold: 'Serenity Yoga'
+    pred: "The user's current question is about where to take yoga classes. Since they've been using Down Dog for home practice and"
+[8/20] single-session-user            MISS f1=0.11 (173.4s query, 0.0s ingest)
+    gold: 'a lighter shade of gray'
+    pred: 'The information about the color of the bedroom walls is not mentioned in the provided conversation history.'
+[9/20] single-session-user            MISS f1=0.07 (252.9s query, 0.0s ingest)
+    gold: 'February 14th'
+    pred: 'Wait, maybe the "Love is in the Air" event is the local animal shelter\'s. If that\'s the case, then the answer is Februar'
+[10/20] single-session-user            MISS f1=0.10 (129.0s query, 0.0s ingest)
+    gold: 'the sports store downtown'
+    pred: 'The information about where you bought your new tennis racket is not provided in the conversation history.'
+[11/20] single-session-user            MISS f1=0.00 (153.9s query, 0.0s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'There is no available information provided about your previous occupation in the conversation history.'
+[12/20] single-session-user            MISS f1=0.00 (136.1s query, 0.0s ingest)
+    gold: '$800'
+    pred: 'The conversation history does not mention any purchase of a designer handbag or its cost.'
+[13/20] single-session-user            MISS f1=0.00 (147.2s query, 0.0s ingest)
+    gold: '20'
+    pred: 'The conversation history does not provide information about the number of playlists on Spotify.'
+[14/20] single-session-user            MISS f1=0.00 (143.7s query, 0.0s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'The conversation history does not mention any study abroad program. No location was provided for such a program.'
+[15/20] single-session-user            MISS f1=0.00 (139.6s query, 0.0s ingest)
+    gold: '10%'
+    pred: 'The conversation history does not mention any discount information related to a new clothing brand or first purchase.'
+[16/20] single-session-user            MISS f1=0.00 (143.0s query, 0.0s ingest)
+    gold: '4 hours'
+    pred: 'The conversation history does not provide information about the time taken to assemble an IKEA bookshelf.'
+[17/20] single-session-user            MISS f1=0.12 (223.2s query, 0.0s ingest)
+    gold: 'a yellow dress'
+    pred: 'The conversation history does not mention anything about a birthday gift for your sister.'
+[18/20] single-session-user            MISS f1=0.00 (165.2s query, 0.0s ingest)
+    gold: '500 Mbps'
+    pred: "The conversation history does not provide information about your internet plan's speed. Check your service provider's de"
+[19/20] single-session-user            MISS f1=0.00 (149.3s query, 0.0s ingest)
+    gold: '7'
+    pred: 'The conversation history does not provide information about the number of shirts packed for a trip to Costa Rica.'
+[20/20] single-session-user            MISS f1=0.00 (172.4s query, 0.0s ingest)
+    gold: 'A staunch atheist'
+    pred: 'No information was provided about your previous stance on spirituality.'
+
+=== 1/20 EM (5.0%), mean F1=0.028 ===
+  single-session-user           : 1/20 (5.0%)

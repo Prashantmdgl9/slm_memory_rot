@@ -1,0 +1,14 @@
+{"qi": 0, "question": "What is the user's current job title?", "gold": "Chief AI Officer at BigBank Corp", "pred": "Chief AI Officer", "hit": true, "f1": 0.6666666666666666, "query_time_s": 53.87}
+{"qi": 1, "question": "Where does the user currently live?", "gold": "Austin", "pred": "The user currently lives in a bigger house in South Lamar.", "hit": false, "f1": 0.0, "query_time_s": 164.74}
+{"qi": 2, "question": "What is the user's current salary?", "gold": "$250,000/year", "pred": "$250,000", "hit": true, "f1": 0.0, "query_time_s": 28.54}
+{"qi": 3, "question": "Does the user have any pets?", "gold": "yes, a dog named Max", "pred": "Yes, the user has a pet cat named Luna who is three years old.", "hit": false, "f1": 0.3157894736842105, "query_time_s": 30.45}
+{"qi": 4, "question": "What is the user's current relationship status?", "gold": "dating Priya", "pred": "seeing someone new", "hit": false, "f1": 0.0, "query_time_s": 36.96}
+{"qi": 5, "question": "What is the user's current car?", "gold": "BMW X5", "pred": "The user's current car is not mentioned in the provided memory.", "hit": false, "f1": 0.0, "query_time_s": 68.82}
+{"qi": 6, "question": "What is the user's current home?", "gold": "house in South Lamar, Austin", "pred": "The user's current home is a bigger house in South Lamar.", "hit": false, "f1": 0.5000000000000001, "query_time_s": 24.54}
+{"qi": 7, "question": "What is the user's diet?", "gold": "omnivore", "pred": "The user's diet is not mentioned in the provided memory.", "hit": false, "f1": 0.0, "query_time_s": 38.98}
+{"qi": 8, "question": "What degree does the user have?", "gold": "CS degree from UCLA", "pred": "The user's memory does not include information about their degree.", "hit": false, "f1": 0.14285714285714288, "query_time_s": 31.56}
+{"qi": 9, "question": "What is the user's sibling's name?", "gold": "Emma", "pred": "Emma", "hit": true, "f1": 1.0, "query_time_s": 23.73}
+{"qi": 10, "question": "Is the user still at TechCorp?", "gold": "no", "pred": "The user's memory does not explicitly state they left TechCorp. The job_title and work_project suggest they are still employed there. **Fact: Yes.**", "hit": true, "f1": 0.0, "query_time_s": 147.57}
+{"qi": 11, "question": "Is the user still vegetarian?", "gold": "no", "pred": "No information provided about vegetarian status.", "hit": true, "f1": 0.2857142857142857, "query_time_s": 51.67}
+{"qi": 12, "question": "Does the user still play guitar?", "gold": "no", "pred": "The fact that the user still plays guitar is not mentioned in the provided memory.", "hit": true, "f1": 0.0, "query_time_s": 36.76}
+{"qi": 13, "question": "Is the user married?", "gold": "no", "pred": "No.", "hit": true, "f1": 1.0, "query_time_s": 34.06}

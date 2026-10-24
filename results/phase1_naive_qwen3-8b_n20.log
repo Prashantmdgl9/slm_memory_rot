@@ -1,0 +1,57 @@
+Manager=naive | Model=qwen3:8b | N=20 | Out=results/phase1_naive_qwen3-8b_n20.jsonl
+Resuming: 3/20 already done, skipping indices [0, 1, 2]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8517.01it/s]
+[4/20] single-session-user            MISS f1=0.10 (150.5s query, 643.7s ingest)
+    gold: 'The Glass Menagerie'
+    pred: 'There is no relevant information in your memory about a play you attended at the local community theater.'
+[5/20] single-session-user            MISS f1=0.00 (104.6s query, 539.9s ingest)
+    gold: 'Summer Vibes'
+    pred: "The user's memory does not mention a Spotify playlist."
+[6/20] single-session-user            OK  f1=1.00 (258.2s query, 452.2s ingest)
+    gold: 'Johnson'
+    pred: 'Johnson'
+[7/20] single-session-user            MISS f1=0.02 (169.1s query, 616.0s ingest)
+    gold: 'Serenity Yoga'
+    pred: 'Okay, the user is asking where to take yoga classes. Let me check their memory. They mentioned practicing yoga with thei'
+[8/20] single-session-user            MISS f1=0.13 (145.6s query, 458.3s ingest)
+    gold: 'a lighter shade of gray'
+    pred: 'The color of your bedroom walls is not mentioned in your memory.'
+[9/20] single-session-user            OK  f1=0.67 (129.4s query, 551.2s ingest)
+    gold: 'February 14th'
+    pred: 'February'
+[10/20] single-session-user            MISS f1=0.00 (170.0s query, 539.5s ingest)
+    gold: 'the sports store downtown'
+    pred: 'There is no relevant information in your memory about where you bought your new tennis racket.'
+[11/20] single-session-user            MISS f1=0.00 (131.0s query, 503.7s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'The information about your previous occupation is not available in the provided memory.'
+[12/20] single-session-user            MISS f1=0.00 (179.1s query, 383.0s ingest)
+    gold: '$800'
+    pred: "The user's memory does not mention spending on a designer handbag."
+[13/20] single-session-user            MISS f1=0.00 (53.1s query, 532.6s ingest)
+    gold: '20'
+    pred: 'The information about the number of playlists on Spotify is not available in the provided memory.'
+[14/20] single-session-user            MISS f1=0.12 (216.9s query, 422.0s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: 'The information about your study abroad program is not provided in the memory.'
+[15/20] single-session-user            MISS f1=0.00 (172.2s query, 389.4s ingest)
+    gold: '10%'
+    pred: 'The discount information is not available in the provided memory.'
+[16/20] single-session-user            MISS f1=0.00 (149.6s query, 517.5s ingest)
+    gold: '4 hours'
+    pred: 'The information about the time taken to assemble the IKEA bookshelf is not available in the provided memory.'
+[17/20] single-session-user            MISS f1=0.00 (77.0s query, 489.7s ingest)
+    gold: 'a yellow dress'
+    pred: "The information about your sister's birthday gift is not available in the provided memory."
+[18/20] single-session-user            MISS f1=0.00 (132.2s query, 272.9s ingest)
+    gold: '500 Mbps'
+    pred: '1 Gbps'
+[19/20] single-session-user            MISS f1=0.00 (104.2s query, 325.2s ingest)
+    gold: '7'
+    pred: 'The number of shirts packed for the 5-day trip to Costa Rica is not mentioned in the provided memory.'
+[20/20] single-session-user            MISS f1=0.02 (52.3s query, 285.6s ingest)
+    gold: 'A staunch atheist'
+    pred: "But the user's memory doesn't explicitly state a previous stance. They're in the process of exploring. However, the ques"
+
+=== 3/20 EM (15.0%), mean F1=0.152 ===
+  single-session-user           : 3/20 (15.0%)

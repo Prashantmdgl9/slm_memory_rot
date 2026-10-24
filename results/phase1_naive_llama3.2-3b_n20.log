@@ -1,0 +1,42 @@
+Manager=naive | Model=llama3.2:3b | N=20 | Out=results/phase1_naive_llama3.2-3b_n20.jsonl
+Resuming: 8/20 already done, skipping indices [0, 1, 2, 3, 4, 5, 6, 7]
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 19445.22it/s]
+[9/20] single-session-user            MISS f1=0.00 (95.0s query, 215.6s ingest)
+    gold: 'February 14th'
+    pred: "You don't have that information in your memory."
+[10/20] single-session-user            MISS f1=0.00 (77.6s query, 97.4s ingest)
+    gold: 'the sports store downtown'
+    pred: "I don't have that information."
+[11/20] single-session-user            MISS f1=0.00 (114.8s query, 137.1s ingest)
+    gold: 'Marketing specialist at a small startup'
+    pred: 'None mentioned.'
+[12/20] single-session-user            MISS f1=0.00 (129.9s query, 58.6s ingest)
+    gold: '$800'
+    pred: 'No information about spending on a designer handbag is available.'
+[13/20] single-session-user            MISS f1=0.00 (45.7s query, 229.3s ingest)
+    gold: '20'
+    pred: "I don't have that information."
+[14/20] single-session-user            MISS f1=0.00 (52.2s query, 198.5s ingest)
+    gold: 'University of Melbourne in Australia'
+    pred: "I don't have that information."
+[15/20] single-session-user            MISS f1=0.00 (42.5s query, 106.4s ingest)
+    gold: '10%'
+    pred: "I don't have that information."
+[16/20] single-session-user            OK  f1=1.00 (185.3s query, 136.3s ingest)
+    gold: '4 hours'
+    pred: '4 hours.'
+[17/20] single-session-user            MISS f1=0.13 (78.7s query, 196.5s ingest)
+    gold: 'a yellow dress'
+    pred: "There is no information about buying a gift for your sister's birthday."
+[18/20] single-session-user            MISS f1=0.00 (101.2s query, 212.8s ingest)
+    gold: '500 Mbps'
+    pred: '1 Gbps.'
+[19/20] single-session-user            MISS f1=0.00 (104.1s query, 115.2s ingest)
+    gold: '7'
+    pred: "There's no information about packing shirts for a trip to Costa Rica."
+[20/20] single-session-user            MISS f1=0.00 (51.6s query, 248.6s ingest)
+    gold: 'A staunch atheist'
+    pred: "I don't have any information about your previous stance on spirituality."
+
+=== 2/20 EM (10.0%), mean F1=0.096 ===
+  single-session-user           : 2/20 (10.0%)
